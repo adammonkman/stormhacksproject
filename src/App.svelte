@@ -1,4 +1,6 @@
 <script>
+  import Feed from './Feed.svelte';
+
   let activeTab = 'feed';
   const switchTab = (tab) => activeTab = tab;
 </script>
@@ -23,10 +25,7 @@
 <!-- Conditionally render the content based on the active tab -->
 <main>
   {#if activeTab === 'feed'}
-      <section>
-          <h2>Feed</h2>
-          <p>Here is your community feed!</p>
-      </section>
+      <Feed />
   {:else if activeTab === 'profile'}
       <section>
           <h2>Profile</h2>
