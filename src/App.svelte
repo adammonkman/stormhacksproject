@@ -6,11 +6,11 @@
 <!-- Header at the top -->
 <header>
   <img 
-    src="/samplepfp.png" 
+    src="/nekogirl.png" 
     alt="Profile" 
     on:click={() => switchTab('profile')}
     style="cursor: pointer; height: 40px;" />
-    <h1>My Awesome Website</h1>
+    <h1>❤️Complimansion❤️</h1>
   
 </header>
 
@@ -59,7 +59,7 @@
         
         
   }
-  
+
   header img {
         margin-right: 10px;
         height: 40px;
