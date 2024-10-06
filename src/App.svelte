@@ -62,7 +62,7 @@
                     <div class="shop-list">
                         {#each shopItems as item}
                             <div class="shop-item">
-                                <img src={item.image} alt={item.name} width="100" height="100">
+                                <img src={item.image} alt={item.name}>
                                 <h4>{item.name}</h4>
                                 <p>Price: {item.price} Kudos</p>
 
