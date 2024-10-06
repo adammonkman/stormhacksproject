@@ -1,8 +1,6 @@
-<!-- src/Feed.svelte -->
 <script>
     import Post from './Post.svelte';
     export let addPoints;
-    //import points from '/App.svelte'; //need points for animation can remove
   import App from './App.svelte';
     // Example hard-coded posts
     let posts = [
@@ -44,13 +42,9 @@
     }, 3000);  // 3 seconds
 }
 </script>
-<h1 id="+1" class="hidden">+{randomPoints}</h1> <!--ANIMATION FOR POINT static-->
+<h1 id="+1" class="hidden">+{randomPoints}</h1> 
 <div>
-    
-    <!-- Pass each post to the Post component and handle the addComment event -->
     {#each posts as post}
         <Post {post} on:addComment={event => addComment(post.id, event.detail)} />
     {/each}
 </div>
-
-

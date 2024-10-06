@@ -65,11 +65,10 @@
                 <p id="goon">Decorate your Room!</p>
             </div>
             <div class="profile-container">
-                <!-- Profile Room Image -->
+
                 <div id="bedroom">
                     <img src="/bedroom-01.svg" alt="bedroom" width="400" height="600">
                 </div>
-                <!-- Shop Items Box -->
                 <div class="shop-box">
                     <h3>Shop Items</h3>
                     <div class="shop-list">
@@ -103,7 +102,7 @@
     {/if}
 </main>
 
-<!-- Styles -->
+
 <style>
     * {
         margin: 0;
@@ -186,6 +185,8 @@
         margin-bottom: 1rem;
     }
 
+   /* .shop-item img:hover {}*/
+
     .shop-item h4 {
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
@@ -206,6 +207,7 @@
         cursor: pointer;
         transition: background-color 0.3s;
         font-family: sans-serif;
+        transform: scale(1.3);
     }
 
     .shop-item button:hover {
