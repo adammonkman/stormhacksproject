@@ -49,10 +49,10 @@
 
 <header>
     <h1 id="home" on:click={() => switchTab('feed')}>compliment</h1>
+    <img id="profile" src="/profile.gif" alt="Profile" on:click={() => switchTab('profile')} />
     <span id ="kudos">
         Kudos: {points}
     </span>
-    <img id="profile" src="/samplepfp.png" alt="Profile" on:click={() => switchTab('profile')} />
 </header>
 
 <main>
@@ -214,19 +214,30 @@
         height: 40px; 
         float: left;
     }
+    #home:hover{
+        transform: scale(1.05);
+    }
 
     #profile {
         cursor: pointer; 
         height: 40px; 
         float: right;
+        border-radius: 20px;
+        transform: scale(1.5);
+    }
+    #profile:hover{
+        transform: scale(1.7);
     }
 
     #kudos{
-        position: fixed;
-        right: 100px;
-        top: 6%;
-        transform: translateY(-50%);
-        font-size: 14px;
+
+        float:right;
+        font-size: 25px;
+        padding-right: 1.2rem;
+    }
+    #kudos:hover{
+
+        transform: scale(1.1);
     }
 
     #bear{
