@@ -21,7 +21,6 @@
     // Function to handle the "Buy" action
     function buyItem(item) {
         if (points >= item.price && item.bought == false) {
-            alert('hello');
             alert(`Click to place the ${item.name}.`);
             document.addEventListener('click', placeItem);
             item.bought = true; // Mark the item as bought
@@ -49,7 +48,7 @@
 
 
 <header>
-    <h1 id="home" on:click={() => switchTab('feed')}>CompliMansion</h1>
+    <h1 id="home" on:click={() => switchTab('feed')}>compliment</h1>
     <span id ="kudos">
         Kudos: {points}
     </span>
