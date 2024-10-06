@@ -20,6 +20,9 @@
             }
             return post;
         });
+
+        // Add points after a comment is added
+        addPoints(1);
     }
 </script>
 

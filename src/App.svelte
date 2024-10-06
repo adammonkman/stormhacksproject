@@ -1,12 +1,13 @@
 <script>
   import Feed from './Feed.svelte';    
   
-  let points = 0; // Initial points
+  export let points = 0; // Initial points
+
   let activeTab = 'feed';
   
   const switchTab = (tab) => activeTab = tab;
 
-  function addPoints(newPoints) {
+  export function addPoints(newPoints) {
         points += newPoints;
     }
 </script>
@@ -14,6 +15,9 @@
 <!-- Main Header at the top -->
 <header>
     <h1 id = "home" on:click={() => switchTab('feed')}>Complimansion</h1>
+    <span style="position: fixed; right: 100px; top: 6%; transform: translateY(-50%); font-size: 14px;">
+        Kudos:{points}
+    </span>
     <img id="profile" src="/samplepfp.png" alt="Profile" on:click={() => switchTab('profile')}/>
 </header>
 
@@ -22,8 +26,8 @@
 
 <!-- Conditionally render the content based on the active tab -->
 <main>
-  {#if activeTab === 'feed'}
-      <Feed/>
+    {#if activeTab === 'feed'}
+    <Feed {addPoints} /> <!-- Pass addPoints to Feed component -->
   {:else if activeTab === 'profile'}
       <section>
           <h2>Profile</h2>
