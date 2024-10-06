@@ -1,7 +1,7 @@
 <script>
     import Feed from './Feed.svelte';    
   
-    export let points = 10; // Example initial points (Kudos balance)
+    export let points = 1000; // Example initial points (Kudos balance)
 
     let activeTab = 'feed';
   
@@ -81,13 +81,13 @@
                                 {#if item.bought}
                                     <p style="color: green;">Purchased</p>
                                     {#if item.id == 1}
-                                    <img src="/bear.svg" alt="bear" style="position: absolute; top: 600px; left: 600px; width: 100px; height: 100px; visibility:hidden;">
+                                    <img src="/bear.svg" alt="bear" id="bear">
                                     {/if}
                                     {#if item.id == 2}
-                                    <img src="/banner.svg" alt="banner" style="position: absolute; top: 350px; left: 350px; width: 100px; height: 100px; transform: scale(2.0);">
+                                    <img src="/banner.svg" alt="banner" id='banner'>
                                     {/if}
                                     {#if item.id == 3}
-                                    <img src="/plant.svg" alt="plant" style="position: absolute; top: 600px; left: 350px; width: 100px; height: 100px;">
+                                    <img src="/plant.svg" alt="plant" id="plant">
                                     {/if}
                                 {:else}
                                     <button on:click={() => buyItem(item)}>Buy</button>
@@ -228,5 +228,30 @@
         top: 6%;
         transform: translateY(-50%);
         font-size: 14px;
+    }
+
+    #bear{
+        position: absolute; 
+        top: 600px; 
+        left: 600px; 
+        width: 100px; 
+        height: 100px
+    }
+
+    #banner{
+        position: absolute; 
+        top: 350px; 
+        left: 350px; 
+        width: 100px; 
+        height: 100px; 
+        transform: scale(2.0);
+    }
+
+    #plant{
+        position: absolute;
+        top: 600px;
+        left: 350px; 
+        width: 100px; 
+        height: 100px; 
     }
 </style>
