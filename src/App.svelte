@@ -1,7 +1,7 @@
-<script>
+<script async>
     import Feed from './Feed.svelte';    
   
-    export let points = 10; // Example initial points (Kudos balance)
+    export let points = 1660; // Example initial points (Kudos balance)
 
     let activeTab = 'feed';
   
@@ -21,7 +21,6 @@
     // Function to handle the "Buy" action
     function buyItem(item) {
         if (points >= item.price && item.bought == false) {
-            alert('hello');
             alert(`Click to place the ${item.name}.`);
             document.addEventListener('click', placeItem);
             item.bought = true; // Mark the item as bought
@@ -34,8 +33,8 @@
         }
     }
 
-    function placeItem(event, item){
-        var i = document.getElementById(item.id);
+    function placeItem(event){
+        var i = document.getElementById("1");
         addEventListener('click', function(event){
             i.style.visibility="visible";
             i.style.left = event.clientX + 'px';
