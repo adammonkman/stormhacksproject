@@ -20,13 +20,13 @@
         src="/home.png" 
         alt="Feed" 
         on:click={() => switchTab('feed')}
-        style="cursor: pointer; height: 40px;" />
+        style="cursor: pointer; height: 40px; float:left;" />
         ❤️Complimansion❤️
         <img 
         src="/samplepfp.png" 
         alt="Profile" 
         on:click={() => switchTab('profile')}
-        style="cursor: pointer; height: 40px;" /></h1>
+        style="cursor: pointer; height: 40px; float:right;" /></h1>
 
 
     
