@@ -12,7 +12,7 @@
         { id: 4, content: 'Had a bad day :(', comments: [] },
         { id: 5, content: 'My code dont freaking work!!!', comments: [] },
     ];
-
+    let randomPoints = 0;
     function addComment(postId, comment) {
         // Find the post by ID and push the new comment to its comments array
         posts = posts.map(post => {
@@ -22,10 +22,12 @@
             }
             return post;
         });
+         // Generate a random number between 1 and 10
+         randomPoints = Math.floor(Math.random() * 10) + 1;
 
         // Add points after a comment is added
         
-        addPoints(1);
+        addPoints(randomPoints);
     }
 
     function flashPoint() {
@@ -42,7 +44,7 @@
     }, 3000);  // 3 seconds
 }
 </script>
-<h1 id="+1" class="hidden">+1</h1> <!--ANIMATION FOR POINT static-->
+<h1 id="+1" class="hidden">+{randomPoints}</h1> <!--ANIMATION FOR POINT static-->
 <div>
     
     <!-- Pass each post to the Post component and handle the addComment event -->
