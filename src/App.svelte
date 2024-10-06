@@ -29,29 +29,26 @@
 <main>
     {#if activeTab === 'feed'}
     <Feed {addPoints} /> <!-- Pass addPoints to Feed component -->
-  {:else if activeTab === 'profile'}
-      <section>
-          <h2>Profile</h2>
-          <p>Welcome to your profile page!</p>
-          <button>class:active={activeTab}</button>
-          <img src="/bedroom-01.svg" alt="bedroom" width="400" height="600">
-
-      </section>
-  {/if}
+    {:else if activeTab === 'profile'}
+        <section>
+            <h2>Profile</h2>
+            <p>Welcome to your profile page!</p>
+            <button>class:active={activeTab}</button>
+            <img src="/bedroom-01.svg" alt="bedroom" width="400" height="600">
+        </section>
+    {/if}
 </main>
 
 <!-- Styles -->
 <style>
-  /* Basic reset and layout styling */
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-  /* Header styling */
-  header {
-    position: fixed;
+    header {
+        position: fixed;
         top:0;
         left: 0;
         width: 100%;
@@ -61,55 +58,64 @@
         padding: 1rem;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         z-index: 10; /* Ensure it's on top of other content */
-  }
+    }
 
-  header img {
+    header img {
         margin-right: 10px;
         height: 40px;
         cursor: pointer; /* Makes the cursor a pointer when hovering over the image */
     }
 
-  /* Push content below header */
-  main {
-      margin-top: 100px; /* Adjust based on header height */
-      padding: 1rem;
-  }
+    main {
+        margin-top: 100px; /* Adjust based on header height */
+        padding: 1rem;
+    }
 
-  /* Navigation bar styling */
-  nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-  }
+     nav {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
 
-  /* Button styling */
-  button {
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      border: none;
-      cursor: pointer;
-      background-color: lightgray;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-  }
+    button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        background-color: lightgray;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
 
-  button.active {
-      background-color: steelblue;
-      color: white;
-  }
+    button.active {
+        background-color: steelblue;
+        color: white;
+    }
 
-  button:hover {
-      background-color: darkgray;
-  }
+    button:hover {
+        background-color: darkgray;
+    }
 
-  /* Basic section styling */
-  section {
-      text-align: center;
-      padding: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  h1{font-family: Courier New, monospace;}
+    section {
+        text-align: center;
+        padding: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 { 
+        font-family:sans-serif ;
+    }
+    #home{
+        cursor: pointer; 
+        height: 40px; 
+        float:left;
+    }
+    #profile{
+        cursor: pointer; 
+        height: 40px; 
+        float:right;
+    }
 </style>
