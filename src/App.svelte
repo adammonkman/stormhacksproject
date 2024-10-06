@@ -1,5 +1,6 @@
 <script>
   import Feed from './Feed.svelte';
+  import Button from "./lib/components/Button.svelte";
   
   let points = 0; // Initial points
 
@@ -28,7 +29,6 @@
     on:click={() => switchTab('profile')}
     style="cursor: pointer; height: 40px;" />
   
-  
 </header>
 
 <!-- Navigation bar for the tabs -->
@@ -48,8 +48,6 @@
           <button>class:active={activeTab}</button>
           <img src="/bedroom-01.svg" alt="bedroom" width="600" height="800">
 
-            
-          
       </section>
   {/if}
 </main>
@@ -75,8 +73,6 @@
         padding: 1rem;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         z-index: 10; /* Ensure it's on top of other content */
-        
-        
   }
 
   header img {

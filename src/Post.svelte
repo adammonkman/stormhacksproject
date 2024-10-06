@@ -1,6 +1,7 @@
 <!-- src/Post.svelte -->
 <script>
     import { createEventDispatcher } from 'svelte';
+    import Button from "./lib/components/Button.svelte";
 
     export let post; // The post object, passed from Feed.svelte
     const dispatch = createEventDispatcher();
@@ -36,19 +37,9 @@
                 box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
             "
         />
-        <button 
-            on:click={submitComment}
-            style="
-                background-color: #007bff; 
-                color: white; 
-                border: none; 
-                padding: 0.5rem 1rem;
-                border-radius: 4px; 
-                cursor: pointer;
-            "
-        >
+        <Button on:click={submitComment}>
             Comment
-        </button>
+        </Button>
     </div>
 
     <!-- Display Comments Section -->
@@ -69,3 +60,14 @@
         </div>
     {/if}
 </div>
+
+<style>
+    .button{
+        background-color: #007bff; 
+        color: white; 
+        border: none; 
+        padding: 0.5rem 1rem;
+        border-radius: 4px; 
+        cursor: pointer;
+    }
+</style>
