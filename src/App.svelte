@@ -1,7 +1,7 @@
 <script async>
     import Feed from './Feed.svelte';    
   
-    export let points = 1000; // Example initial points (Kudos balance)
+    export let points = 150; // Example initial points (Kudos balance)
 
     let activeTab = 'feed';
   
@@ -21,7 +21,7 @@
     // Function to handle the "Buy" action
     function buyItem(item) {
         if (points >= item.price && item.bought == false) {
-            alert(`Click to place the ${item.name}.`);
+
             document.addEventListener('click', placeItem);
             item.bought = true; // Mark the item as bought
             
@@ -59,14 +59,15 @@
     {#if activeTab === 'feed'}
         <Feed {addPoints} /> 
     {:else if activeTab === 'profile'}
-        <section>
+        <section id = "pf">
             <h2>Profile</h2>
-            <p>Welcome to your profile page!</p>
+            <p>Decorate your Room!</p>
 
             <div class="profile-container">
                 <!-- Profile Room Image -->
-                <img src="/bedroom-01.svg" alt="bedroom" width="400" height="600">
-                
+                <div id="bedroom">
+                    <img src="/bedroom-01.svg" alt="bedroom" width="400" height="600">
+                </div>
                 <!-- Shop Items Box -->
                 <div class="shop-box">
                     <h3>Shop Items</h3>
@@ -145,7 +146,7 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        gap: 2rem;
+        gap: 4rem;
     }
 
     .shop-box {
@@ -155,6 +156,7 @@
         padding: 1rem;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
+        margin-top: 2rem;
     }
 
     .shop-box h3 {
@@ -209,6 +211,13 @@
         font-family: sans-serif;
     }
 
+    #bedroom{
+        max-width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 3em;
+    }
+
     #home {
         cursor: pointer; 
         height: 40px; 
@@ -251,7 +260,7 @@
     #banner{
         position: absolute; 
         top: 350px; 
-        left: 350px; 
+        left: 400px; 
         width: 100px; 
         height: 100px; 
         transform: scale(2.0);
@@ -260,8 +269,11 @@
     #plant{
         position: absolute;
         top: 600px;
-        left: 350px; 
+        left: 400px; 
         width: 100px; 
         height: 100px; 
+    }
+    #pf{
+        background-color: black;
     }
 </style>

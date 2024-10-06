@@ -23,7 +23,7 @@
             return post;
         });
          // Generate a random number between 1 and 10
-         randomPoints = Math.floor(Math.random() * 10) + 1;
+         randomPoints = Math.floor(Math.random() * 20) + 1;
 
         // Add points after a comment is added
         
