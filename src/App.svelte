@@ -1,7 +1,7 @@
 <script>
     import Feed from './Feed.svelte';    
   
-    export let points = 150; // Example initial points (Kudos balance)
+    export let points = 1500; // Example initial points (Kudos balance)
 
     let activeTab = 'feed';
   
@@ -14,15 +14,16 @@
 
     // Example shop items
     let shopItems = [
-        { id: 1, name: "Teddy Bear", price: 100, image: "/bear.svg", bought: false },
-        { id: 2, name: "Banner", price: 150, image: "/banner.svg", bought: false },
-        { id: 3, name: "Plant", price: 50, image: "/plant.svg", bought: false }
+        { id: 1, name: "Teddy Bear", price: 100, image: "/bear.svg", bought: false, hidden: true },
+        { id: 2, name: "Banner", price: 150, image: "/banner.svg", bought: false, hidden: true },
+        { id: 3, name: "Plant", price: 50, image: "/plant.svg", bought: false, hidden: true }
     ];
 
     // Function to handle the "Buy" action
     function buyItem(item) {
         if (points >= item.price && item.bought == false) {
             item.bought = true; // Mark the item as bought
+            item.hidden = false; //make item appear in room
             
             points -= item.price; // Deduct the item price from points
 
@@ -56,6 +57,9 @@
                 <!-- Profile Room Image -->
                 <img src="/bedroom-01.svg" alt="bedroom" width="400" height="600">
 
+                
+                
+
                 <!-- Shop Items Box -->
                 <div class="shop-box">
                     <h3>Shop Items</h3>
@@ -68,6 +72,15 @@
 
                                 {#if item.bought}
                                     <p style="color: green;">Purchased</p>
+                                    {#if item.id == 1}
+                                    <img src="/bear.svg" alt="bear" style="position: absolute; top: 600px; left: 600px; width: 100px; height: 100px;">
+                                    {/if}
+                                    {#if item.id == 2}
+                                    <img src="/banner.svg" alt="banner" style="position: absolute; top: 350px; left: 350px; width: 100px; height: 100px; transform: scale(2.0);">
+                                    {/if}
+                                    {#if item.id == 3}
+                                    <img src="/plant.svg" alt="plant" style="position: absolute; top: 600px; left: 350px; width: 100px; height: 100px;">
+                                    {/if}
                                 {:else}
                                     <button on:click={() => buyItem(item)}>Buy</button>
                                     
