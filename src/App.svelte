@@ -9,6 +9,7 @@
 
   export function addPoints(newPoints) {
         points += newPoints;
+        return points;
     }
 </script>
 
@@ -31,7 +32,7 @@
         on:click={() => switchTab('profile')}
         style="cursor: pointer; height: 40px; float:right;" /></h1>
 
-
+        
     
   
   
@@ -127,4 +128,5 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   h1{font-family: Courier New, monospace;}
+
 </style>
