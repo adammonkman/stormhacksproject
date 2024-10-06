@@ -1,8 +1,7 @@
-<!-- src/App.svelte -->
 <script>
     import Feed from './Feed.svelte';    
   
-    export let points = 0; // Initial points
+    export let points = 150; // Example initial points (Kudos balance)
 
     let activeTab = 'feed';
   
@@ -15,10 +14,23 @@
 
     // Example shop items
     let shopItems = [
-        { id: 1, name: "Teddy Bear", price: 100, image: "/bear.svg" },
-        { id: 2, name: "Banner", price: 150, image: "/banner.svg" },
-        { id: 3, name: "Plant", price: 50, image: "/plant.svg" }
+        { id: 1, name: "Teddy Bear", price: 100, image: "/bear.svg", bought: false },
+        { id: 2, name: "Banner", price: 150, image: "/banner.svg", bought: false },
+        { id: 3, name: "Plant", price: 50, image: "/plant.svg", bought: false }
     ];
+
+    // Function to handle the "Buy" action
+    function buyItem(item) {
+        if (points >= item.price && item.bought == false) {
+            item.bought = true; // Mark the item as bought
+            
+            points -= item.price; // Deduct the item price from points
+
+            shopItems = [...shopItems];
+        } else {
+            alert(`You don't have enough Kudos to buy the ${item.name}.`);
+        }
+    }
 </script>
 
 <!-- Main Header at the top -->
@@ -42,7 +54,7 @@
             <!-- Profile Room and Shop Items Side-by-Side -->
             <div class="profile-container">
                 <!-- Profile Room Image -->
-                <img src="/bedroom-01.svg" alt="bedroom" width="500" height="700">
+                <img src="/bedroom-01.svg" alt="bedroom" width="400" height="600">
 
                 <!-- Shop Items Box -->
                 <div class="shop-box">
@@ -50,10 +62,16 @@
                     <div class="shop-list">
                         {#each shopItems as item}
                             <div class="shop-item">
-                                <img src={item.image} alt={item.name}>
+                                <img src={item.image} alt={item.name} width="100" height="100">
                                 <h4>{item.name}</h4>
                                 <p>Price: {item.price} Kudos</p>
-                                <button>Buy</button>
+
+                                {#if item.bought}
+                                    <p style="color: green;">Purchased</p>
+                                {:else}
+                                    <button on:click={() => buyItem(item)}>Buy</button>
+                                    
+                                {/if}
                             </div>
                         {/each}
                     </div>
@@ -81,7 +99,7 @@
         text-align: center;
         padding: 1rem;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        z-index: 10; /* Ensure it's on top of other content */
+        z-index: 10;
     }
 
     header img {
@@ -91,7 +109,7 @@
     }
 
     main {
-        margin-top: 100px; /* Adjust based on header height */
+        margin-top: 100px;
         padding: 1rem;
     }
 
