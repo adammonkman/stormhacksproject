@@ -7,7 +7,9 @@
     let posts = [
         { id: 1, content: 'Im sad', comments: [] },
         { id: 2, content: 'Need kind words rn plssss', comments: [] },
-        { id: 3, content: 'Im going crazy!!!!', comments: [] }
+        { id: 3, content: 'Im going crazy!!!!', comments: [] },
+        { id: 4, content: 'Had a bad day :(', comments: [] },
+        { id: 5, content: 'My code dont freaking work!!!', comments: [] },
     ];
 
     function addComment(postId, comment) {
