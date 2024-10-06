@@ -30,6 +30,11 @@
       <section>
           <h2>Profile</h2>
           <p>Welcome to your profile page!</p>
+          <button>class:active={activeTab}</button>
+          <img src="/bedroom-01.svg" alt="bedroom" width="600" height="800">
+
+            
+          
       </section>
   {/if}
 </main>
