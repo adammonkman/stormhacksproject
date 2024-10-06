@@ -15,27 +15,27 @@
 <!-- Header at the top -->
 <header>
 
-    <h1>❤️Complimansion❤️</h1>
+    <h1>
+        <img 
+        src="/home.png" 
+        alt="Feed" 
+        on:click={() => switchTab('feed')}
+        style="cursor: pointer; height: 40px;" />
+        ❤️Complimansion❤️
+        <img 
+        src="/samplepfp.png" 
+        alt="Profile" 
+        on:click={() => switchTab('profile')}
+        style="cursor: pointer; height: 40px;" /></h1>
 
 
-    <img 
-    src="/home.png" 
-    alt="Feed" 
-    on:click={() => switchTab('feed')}
-    style="cursor: pointer; height: 40px;" />
-  <img 
-    src="/nekogirl.png" 
-    alt="Profile" 
-    on:click={() => switchTab('profile')}
-    style="cursor: pointer; height: 40px;" />
+    
+  
   
 </header>
 
-<!-- Navigation bar for the tabs -->
-<nav>
-  <button class:active={activeTab === 'feed'} on:click={() => switchTab('feed')}>Feed</button>
-  <button class:active={activeTab === 'profile'} on:click={() => switchTab('profile')}>Profile</button>
-</nav>
+
+
 
 <!-- Conditionally render the content based on the active tab -->
 <main>
@@ -46,7 +46,7 @@
           <h2>Profile</h2>
           <p>Welcome to your profile page!</p>
           <button>class:active={activeTab}</button>
-          <img src="/bedroom-01.svg" alt="bedroom" width="600" height="800">
+          <img src="/bedroom-01.svg" alt="bedroom" width="400" height="600">
 
       </section>
   {/if}
@@ -123,4 +123,5 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+  h1{font-family: Courier New, monospace;}
 </style>
