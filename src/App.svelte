@@ -1,7 +1,7 @@
 <script>
     import Feed from './Feed.svelte';    
   
-    export let points = 1500; // Example initial points (Kudos balance)
+    export let points = 10; // Example initial points (Kudos balance)
 
     let activeTab = 'feed';
   
@@ -12,18 +12,19 @@
         return points;
     }
 
-    // Example shop items
     let shopItems = [
-        { id: 1, name: "Teddy Bear", price: 100, image: "/bear.svg", bought: false, hidden: true },
-        { id: 2, name: "Banner", price: 150, image: "/banner.svg", bought: false, hidden: true },
-        { id: 3, name: "Plant", price: 50, image: "/plant.svg", bought: false, hidden: true }
+        { id: 1, name: "Teddy Bear", price: 100, image: "/bear.svg", bought: false},
+        { id: 2, name: "Banner", price: 150, image: "/banner.svg", bought: false},
+        { id: 3, name: "Plant", price: 50, image: "/plant.svg", bought: false}
     ];
 
     // Function to handle the "Buy" action
     function buyItem(item) {
         if (points >= item.price && item.bought == false) {
+            alert('hello');
+            alert(`Click to place the ${item.name}.`);
+            document.addEventListener('click', placeItem);
             item.bought = true; // Mark the item as bought
-            item.hidden = false; //make item appear in room
             
             points -= item.price; // Deduct the item price from points
 
@@ -32,34 +33,41 @@
             alert(`You don't have enough Kudos to buy the ${item.name}.`);
         }
     }
+
+    function placeItem(event, item){
+        var i = document.getElementById(item.id);
+        addEventListener('click', function(event){
+            i.style.visibility="visible";
+            i.style.left = event.clientX + 'px';
+            i.style.top = event.clientY + 'px';
+        })
+    }
+
+
+
 </script>
 
-<!-- Main Header at the top -->
+
 <header>
-    <h1 id="home" on:click={() => switchTab('feed')}>Complimansion</h1>
-    <span style="position: fixed; right: 100px; top: 6%; transform: translateY(-50%); font-size: 14px;">
+    <h1 id="home" on:click={() => switchTab('feed')}>CompliMansion</h1>
+    <span id ="kudos">
         Kudos: {points}
     </span>
     <img id="profile" src="/samplepfp.png" alt="Profile" on:click={() => switchTab('profile')} />
 </header>
 
-<!-- Conditionally render the content based on the active tab -->
 <main>
     {#if activeTab === 'feed'}
-        <Feed {addPoints} /> <!-- Pass addPoints to Feed component -->
+        <Feed {addPoints} /> 
     {:else if activeTab === 'profile'}
         <section>
             <h2>Profile</h2>
             <p>Welcome to your profile page!</p>
 
-            <!-- Profile Room and Shop Items Side-by-Side -->
             <div class="profile-container">
                 <!-- Profile Room Image -->
                 <img src="/bedroom-01.svg" alt="bedroom" width="400" height="600">
-
                 
-                
-
                 <!-- Shop Items Box -->
                 <div class="shop-box">
                     <h3>Shop Items</h3>
@@ -73,7 +81,7 @@
                                 {#if item.bought}
                                     <p style="color: green;">Purchased</p>
                                     {#if item.id == 1}
-                                    <img src="/bear.svg" alt="bear" style="position: absolute; top: 600px; left: 600px; width: 100px; height: 100px;">
+                                    <img src="/bear.svg" alt="bear" style="position: absolute; top: 600px; left: 600px; width: 100px; height: 100px; visibility:hidden;">
                                     {/if}
                                     {#if item.id == 2}
                                     <img src="/banner.svg" alt="banner" style="position: absolute; top: 350px; left: 350px; width: 100px; height: 100px; transform: scale(2.0);">
@@ -212,5 +220,13 @@
         cursor: pointer; 
         height: 40px; 
         float: right;
+    }
+
+    #kudos{
+        position: fixed;
+        right: 100px;
+        top: 6%;
+        transform: translateY(-50%);
+        font-size: 14px;
     }
 </style>
