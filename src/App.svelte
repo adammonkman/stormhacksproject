@@ -1,6 +1,6 @@
 <script>
   import Feed from './Feed.svelte';
-  import Profile from './Profile.svelte'
+  
   let points = 0; // Initial points
 
   let activeTab = 'feed';
@@ -13,12 +13,21 @@
 
 <!-- Header at the top -->
 <header>
+
+    <h1>❤️Complimansion❤️</h1>
+
+
+    <img 
+    src="/home.png" 
+    alt="Feed" 
+    on:click={() => switchTab('feed')}
+    style="cursor: pointer; height: 40px;" />
   <img 
     src="/nekogirl.png" 
     alt="Profile" 
     on:click={() => switchTab('profile')}
     style="cursor: pointer; height: 40px;" />
-    <h1>❤️Complimansion❤️</h1>
+  
   
 </header>
 
