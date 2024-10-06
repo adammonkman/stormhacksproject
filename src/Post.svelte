@@ -58,6 +58,7 @@
         margin-bottom: 1rem; 
         padding: 1rem; 
         border-radius: 8px;
+        font-family: sans-serif;
     }
 
     #comment_section{
@@ -77,6 +78,7 @@
         font-size: 1rem; 
         border: 3px solid white; 
         margin-right: 10px;
+        font-family: sans-serif;
     }
     #ul{
         list-style: none; 

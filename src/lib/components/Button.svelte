@@ -16,7 +16,7 @@
         background-color: white;
         padding: 0.4rem 0.5rem;
         margin: 0.25rem 0.25rem;
-
+        font-family: sans-serif;
         transition: all ease-out 250ms;
     }
 

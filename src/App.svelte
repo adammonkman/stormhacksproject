@@ -60,9 +60,10 @@
         <Feed {addPoints} /> 
     {:else if activeTab === 'profile'}
         <section id = "pf">
-            <h2>Profile</h2>
-            <p>Decorate your Room!</p>
-
+            <div id="profile-head">
+                <h2 id="title">Profile</h2>
+                <p id="goon">Decorate your Room!</p>
+            </div>
             <div class="profile-container">
                 <!-- Profile Room Image -->
                 <div id="bedroom">
@@ -116,11 +117,13 @@
         left: 0;
         width: 100%;
         background-color: white;
-        color: black;
+        
         text-align: center;
         padding: 1rem;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         z-index: 10;
+        font-family: sans-serif;
+        
     }
 
     header img {
@@ -201,6 +204,7 @@
         border-radius: 4px;
         cursor: pointer;
         transition: background-color 0.3s;
+        font-family: sans-serif;
     }
 
     .shop-item button:hover {
@@ -273,7 +277,21 @@
         width: 100px; 
         height: 100px; 
     }
+    
     #pf{
         background-color: black;
+    }
+
+    #title{
+        float: left;
+    }
+
+    #goon{
+        padding-right: 1em;
+        float: right;
+    }
+
+    #profile-head{
+        padding: 1.2em;
     }
 </style>
