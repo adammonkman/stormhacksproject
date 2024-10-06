@@ -117,12 +117,13 @@
         left: 0;
         width: 100%;
         background-color: white;
-        
+        color:black;
         text-align: center;
         padding: 1rem;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         z-index: 10;
         font-family: sans-serif;
+        text-shadow: 3px 3px 2px rgba(128, 57, 57, 1);
         
     }
 
@@ -243,7 +244,7 @@
     }
 
     #kudos{
-
+        text-shadow:none;
         float:right;
         font-size: 25px;
         padding-right: 1.2rem;
@@ -277,12 +278,14 @@
         width: 100px; 
         height: 100px; 
     }
-    
+
     #pf{
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.755);
     }
 
     #title{
+        text-shadow: 3px 3px 2px rgba(128, 57, 57, 1);
+        font-size:30px;
         float: left;
     }
 

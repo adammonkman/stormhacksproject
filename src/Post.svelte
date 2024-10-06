@@ -53,7 +53,7 @@
     }
     #posts{
         border: 1px solid black; 
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.626);
         color:white;
         margin-bottom: 1rem; 
         padding: 1rem; 
@@ -78,7 +78,6 @@
         font-size: 1rem; 
         border: 3px solid white; 
         margin-right: 10px;
-        font-family: sans-serif;
     }
     #ul{
         list-style: none; 
