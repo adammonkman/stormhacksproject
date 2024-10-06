@@ -1,6 +1,7 @@
 <!-- src/Feed.svelte -->
 <script>
     import Post from './Post.svelte';
+    export let addPoints;
 
     // Example hard-coded posts
     let posts = [

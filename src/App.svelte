@@ -1,8 +1,14 @@
 <script>
   import Feed from './Feed.svelte';
+  import Profile from './Profile.svelte'
+  let points = 0; // Initial points
 
   let activeTab = 'feed';
   const switchTab = (tab) => activeTab = tab;
+
+  function addPoints(newPoints) {
+        points += newPoints;
+    }
 </script>
 
 <!-- Header at the top -->
@@ -25,7 +31,7 @@
 <!-- Conditionally render the content based on the active tab -->
 <main>
   {#if activeTab === 'feed'}
-      <Feed />
+      <Feed/>
   {:else if activeTab === 'profile'}
       <section>
           <h2>Profile</h2>
