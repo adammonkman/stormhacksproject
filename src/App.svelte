@@ -1,10 +1,10 @@
 <script>
-  import Feed from './Feed.svelte';
-  import Button from "./lib/components/Button.svelte";
+  import Feed from './Feed.svelte';    
   
   export let points = 0; // Initial points
 
   let activeTab = 'feed';
+  
   const switchTab = (tab) => activeTab = tab;
 
   export function addPoints(newPoints) {
@@ -13,29 +13,13 @@
     }
 </script>
 
-<!-- Header at the top -->
+<!-- Main Header at the top -->
 <header>
-
-    <h1>
-        <img 
-        src="/home.png" 
-        alt="Feed" 
-        on:click={() => switchTab('feed')}
-        style="cursor: pointer; height: 40px; float:left;" />
-        ❤️Complimansion❤️  
-        <span style="position: fixed; right: 100px; top: 6%; transform: translateY(-50%); font-size: 14px;">
-            Kudos:{points}
-        </span>               
-        <img 
-        src="/samplepfp.png" 
-        alt="Profile" 
-        on:click={() => switchTab('profile')}
-        style="cursor: pointer; height: 40px; float:right;" /></h1>
-
-        
-    
-  
-  
+    <h1 id = "home" on:click={() => switchTab('feed')}>Complimansion</h1>
+    <span style="position: fixed; right: 100px; top: 6%; transform: translateY(-50%); font-size: 14px;">
+        Kudos:{points}
+    </span>
+    <img id="profile" src="/samplepfp.png" alt="Profile" on:click={() => switchTab('profile')}/>
 </header>
 
 
@@ -71,8 +55,8 @@
         top:0;
         left: 0;
         width: 100%;
-        background-color: steelblue;
-        color: white;
+        background-color:  white;
+        color: black;
         text-align: center; /* Align text in the center */
         padding: 1rem;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -128,5 +112,4 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   h1{font-family: Courier New, monospace;}
-
 </style>
