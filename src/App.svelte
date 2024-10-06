@@ -1,10 +1,9 @@
 <script>
-  import Feed from './Feed.svelte';
-  import Button from "./lib/components/Button.svelte";
+  import Feed from './Feed.svelte';    
   
   let points = 0; // Initial points
-
   let activeTab = 'feed';
+  
   const switchTab = (tab) => activeTab = tab;
 
   function addPoints(newPoints) {
@@ -12,26 +11,10 @@
     }
 </script>
 
-<!-- Header at the top -->
+<!-- Main Header at the top -->
 <header>
-
-    <h1>
-        <img 
-        src="/home.png" 
-        alt="Feed" 
-        on:click={() => switchTab('feed')}
-        style="cursor: pointer; height: 40px; float:left;" />
-        ❤️Complimansion❤️
-        <img 
-        src="/samplepfp.png" 
-        alt="Profile" 
-        on:click={() => switchTab('profile')}
-        style="cursor: pointer; height: 40px; float:right;" /></h1>
-
-
-    
-  
-  
+    <h1 id = "home" on:click={() => switchTab('feed')}>Complimansion</h1>
+    <img id="profile" src="/samplepfp.png" alt="Profile" on:click={() => switchTab('profile')}/>
 </header>
 
 
@@ -67,8 +50,8 @@
         top:0;
         left: 0;
         width: 100%;
-        background-color: steelblue;
-        color: white;
+        background-color:  white;
+        color: black;
         text-align: center; /* Align text in the center */
         padding: 1rem;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -123,5 +106,18 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  h1{font-family: Courier New, monospace;}
+  h1{font-family:sans-serif ;}
+
+#home{
+    cursor: pointer; 
+    height: 40px; 
+    float:left;
+}
+
+#profile{
+    cursor: pointer; 
+    height: 40px; 
+    float:right;
+}
+
 </style>

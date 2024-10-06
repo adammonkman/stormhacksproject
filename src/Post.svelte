@@ -17,42 +17,23 @@
 </script>
 
 <!-- Post Content & Comment Input Form -->
-<div style="border: 1px solid #ccc; margin-bottom: 1rem; padding: 1rem; border-radius: 8px;">
+<div id="posts">
     <p>{post.content}</p>
 
     <!-- Comment Input Section -->
-    <div style="margin-top: 1rem; display: flex; align-items: center;">
-        <input 
-            type="text" 
-            placeholder="Add a comment..." 
-            bind:value={newComment} 
-            on:keydown="{(e) => e.key === 'Enter' && submitComment()}" 
-            style="
-                flex: 1; 
-                padding: 0.5rem;
-                font-size: 1rem; 
-                border: 1px solid #ccc; 
-                border-radius: 4px;
-                margin-right: 10px;
-                box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-            "
-        />
-        <Button on:click={submitComment}>
-            Comment
-        </Button>
+    <div id="comment">
+        <input id="text" type="text" placeholder="Add a comment..." 
+        bind:value={newComment} on:keydown="{(e) => e.key === 'Enter' && submitComment()}" />
+        <Button on:click={submitComment}> Comment </Button>
     </div>
 
     <!-- Display Comments Section -->
     {#if post.comments.length > 0}
-        <div style="margin-top: 1rem;">
-            <h4 style="margin-bottom: 0.5rem;">Comments:</h4>
-            <ul style="list-style: none; padding-left: 0;">
+        <div id="comment_section">
+            <h4 id="comments">Comments:</h4>
+            <ul id="ul">
                 {#each post.comments as comment}
-                    <li style="
-                        padding: 0.5rem; 
-                        border-bottom: 1px solid #eee;
-                        font-size: 0.9rem;
-                    ">
+                    <li id="li">
                         {comment}
                     </li>
                 {/each}
@@ -62,5 +43,43 @@
 </div>
 
 <style>
-    
+    #li{
+        padding: 0.5rem; 
+        border-bottom: 1px solid white;
+        font-size: 0.9rem;
+    }
+    #comments{
+        margin-bottom: 0.5rem;
+    }
+    #posts{
+        border: 1px solid black; 
+        background-color: black;
+        color:white;
+        margin-bottom: 1rem; 
+        padding: 1rem; 
+        border-radius: 8px;
+    }
+
+    #comment_section{
+        margin-top: 1rem; 
+    }
+    #comment{
+        margin-top: 1rem; 
+        display: flex; 
+        align-items: center;
+    }
+    #text{
+        border-radius: 10px;
+        flex: 1; 
+        color:black;
+        background-color: white;
+        padding: 0.5rem;
+        font-size: 1rem; 
+        border: 3px solid white; 
+        margin-right: 10px;
+    }
+    #ul{
+        list-style: none; 
+        padding-left: 0;
+    }
 </style>

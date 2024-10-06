@@ -12,7 +12,8 @@
     button {
         border: var(--focus) 2px solid;
         border-radius: 5px;
-        background-color: blue;
+        color:black;
+        background-color: white;
         padding: 0.4rem 0.5rem;
         margin: 0.25rem 0.25rem;
 
